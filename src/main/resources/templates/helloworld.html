@@ -2,11 +2,13 @@
 <html xmlns:th="http://www.thymleaf.org">
 <head>
     <title>
-        Thymleaf Demo
+        Thymeleaf Demo
     </title>
 
+    <link rel="stylesheet" th:href="@{/css/demo.css}"/>
+
     <body>
-<p th:text="'Time on the server is'+ ${theDate}" />
+<p th:text="'Time on the server is'+ ${theDate}" class="funny" />
 </body>
 </head>
 
