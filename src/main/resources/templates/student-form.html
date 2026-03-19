@@ -36,10 +36,12 @@
         <br><br>
 
         Favourite Operating Systems:
-        <input type="checkbox" th:field="*{favouriteSystems}" th:value="Linux">Linux</input>
-        <input type="checkbox" th:field="*{favouriteSystems}" th:value="'Microsoft Windows'">Microsoft Windows</input>
-        <input type="checkbox" th:field="*{favouriteSystems}" th:value="Mac">Mac</input>
-        <input type="checkbox" th:field="*{favouriteSystems}" th:value="Parrot">Parrot</input>
+<!--        <input type="checkbox" th:field="*{favouriteSystems}" th:value="Linux">Linux</input>-->
+<!--        <input type="checkbox" th:field="*{favouriteSystems}" th:value="'Microsoft Windows'">Microsoft Windows</input>-->
+<!--        <input type="checkbox" th:field="*{favouriteSystems}" th:value="Mac">Mac</input>-->
+<!--        <input type="checkbox" th:field="*{favouriteSystems}" th:value="Parrot">Parrot</input>-->
+
+        <input type="checkbox" th:field="*{favouriteSystems}" th:each="tempSystem: ${systems}" th:value="${tempSystem}" th:text="${tempSystem}" />
 
         <br><br>
         <input type="submit" value="Submit" />
