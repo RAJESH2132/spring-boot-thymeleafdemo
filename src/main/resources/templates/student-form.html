@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <title>Student Registration Form</title>
@@ -12,6 +12,36 @@
 
         <br><br>
         Last name: <input type="text" th:field="*{lastName}"/>
+
+        <br><br>
+        Country:
+        <select th:field="*{country}">
+<!--            <option th:value="India">India</option>-->
+<!--            <option th:value="Brazil">Brazil</option>-->
+<!--            <option th:value="US">US</option>-->
+<!--            <option th:value="Russia">Russia</option>-->
+<!--            <option th:value="England">England</option>-->
+            <option th:each="tempCountry: ${countries}" th:value="${tempCountry}" th:text="${tempCountry}"/>
+        </select>
+
+        <br><br>
+
+        Favourite Programming Language:
+
+<!--        <input type="radio" th:field="*{favouriteLanguage}" th:value="Go">Go</input>-->
+<!--        <input type="radio" th:field="*{favouriteLanguage}" th:value="Python">Python</input>-->
+<!--        <input type="radio" th:field="*{favouriteLanguage}" th:value="Java">Java</input>-->
+        <input type="radio" th:field="*{favouriteLanguage}" th:each="tempLanguage: ${languages}" th:value="${tempLanguage}"  th:text="${tempLanguage}"/>
+
+        <br><br>
+
+        Favourite Operating Systems:
+<!--        <input type="checkbox" th:field="*{favouriteSystems}" th:value="Linux">Linux</input>-->
+<!--        <input type="checkbox" th:field="*{favouriteSystems}" th:value="'Microsoft Windows'">Microsoft Windows</input>-->
+<!--        <input type="checkbox" th:field="*{favouriteSystems}" th:value="Mac">Mac</input>-->
+<!--        <input type="checkbox" th:field="*{favouriteSystems}" th:value="Parrot">Parrot</input>-->
+
+        <input type="checkbox" th:field="*{favouriteSystems}" th:each="tempSystem: ${systems}" th:value="${tempSystem}" th:text="${tempSystem}" />
 
         <br><br>
         <input type="submit" value="Submit" />
